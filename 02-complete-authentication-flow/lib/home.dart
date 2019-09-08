@@ -2,12 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-final GoogleSignIn googleSignIn = GoogleSignIn(
-  scopes: [
-    'email',
-    'https://www.googleapis.com/auth/contacts.readonly',
-  ],
-);
+final GoogleSignIn googleSignIn = GoogleSignIn();
 class Home extends StatefulWidget
 {
   @override
@@ -24,11 +19,6 @@ class _HomeState extends State<Home>{
   @override
   void initState() {
     super.initState();
-    googleSignIn.onCurrentUserChanged.listen((account){
-        handleSignIn(account);
-    },onError: (err){
-      print('Error signing in: $err');
-    });
 
     //Reauthenticate user when app is opened
     googleSignIn.signInSilently(suppressErrors: false)
@@ -62,7 +52,11 @@ class _HomeState extends State<Home>{
 
   login(){
     print('login');
-    googleSignIn.signIn();
+    googleSignIn.signIn().then((account){
+      print(account);
+    }).catchError((err){
+      print('Error signing in: $err');
+    });
   }
 
   logout(){
