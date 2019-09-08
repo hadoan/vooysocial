@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 final GoogleSignIn googleSignIn = GoogleSignIn();
+
 class Home extends StatefulWidget
 {
   @override
@@ -15,34 +16,21 @@ class Home extends StatefulWidget
 class _HomeState extends State<Home>{
 
   bool isAuth = false;
-
   @override
   void initState() {
     super.initState();
 
-    //Reauthenticate user when app is opened
-    googleSignIn.signInSilently(suppressErrors: false)
-      .then((account){
+    googleSignIn.onCurrentUserChanged.listen((account){
         handleSignIn(account);
-      }).catchError((err){
-         print('Error signing in: $err');
-      });
+    },onError: (err){
+       print("SignIn error!: $err"); 
+    });
 
-  }
-
-  handleSignIn(GoogleSignInAccount account)
-  {
-    if(account!=null){
-          print('User signed in: $account');
-          setState(() {
-           isAuth = true; 
-          });
-        }
-        else {
-          setState(() {
-           isAuth = false; 
-          });
-        }
+    googleSignIn.signInSilently(suppressErrors: false).then((account){
+      handleSignIn(account);
+    }).catchError((err){
+      print("SignIn error!: $err");
+    });
   }
 
   @override
@@ -50,25 +38,46 @@ class _HomeState extends State<Home>{
     return isAuth? buildAuthScreen():buildUnAuthScreen();
   }
 
-  login(){
-    print('login');
-    googleSignIn.signIn().then((account){
-      print(account);
+  logout(){
+    print('logout');
+    googleSignIn.signOut().then((account){
+      handleSignIn(account);
     }).catchError((err){
-      print('Error signing in: $err');
+      print("SignOut error!: $err");
     });
   }
 
-  logout(){
-    print('logout...');
-    googleSignIn.signOut();
+  login()
+  {
+    googleSignIn.signIn().then((GoogleSignInAccount account){
+      print("Signed account: $account");
+      handleSignIn(account);
+    }).catchError((err){
+      print("SignIn error!: $err");
+    });
+  }
+
+  handleSignIn(GoogleSignInAccount account)
+  {
+    if(account!=null)
+    {
+      setState(() {
+       isAuth = true; 
+      });
+    }
+    else
+    {
+      setState(() {
+       isAuth = false; 
+      });
+    }
   }
 
   Widget buildAuthScreen(){
     return RaisedButton(
-      child: Text("Logout"),
       onPressed: logout,
-    );
+      child: Text("Logout"),
+      );
   }
 
   Widget buildUnAuthScreen()
@@ -80,7 +89,7 @@ class _HomeState extends State<Home>{
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
             colors: [
-              Theme.of(context).accentColor.withOpacity(0.8),
+              Theme.of(context).accentColor,
               Theme.of(context).primaryColor
             ]
           )

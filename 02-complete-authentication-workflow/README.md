@@ -1,4 +1,4 @@
-# VooySocial
+# vooysocial
 
 A new Flutter project.
 

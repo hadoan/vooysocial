@@ -8,36 +8,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1080116307431:android:516c69454654f303bf4942",
-        "android_client_info": {
-          "package_name": "com.hadoan.test"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1080116307431-iao8bci2do50i2r664tf6p9rr2ookv0p.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB5l7flG3waxXg7wI98WVqbEnGWYUSPsu4"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1080116307431-iao8bci2do50i2r664tf6p9rr2ookv0p.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1080116307431:android:49bad8403a31bea1bf4942",
+        "mobilesdk_app_id": "1:1080116307431:android:1b43641dbb36d891bf4942",
         "android_client_info": {
           "package_name": "com.hadoan.vooysocial"
         }

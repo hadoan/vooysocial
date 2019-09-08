@@ -1,4 +1,4 @@
-package com.hadoan.vooysocial;
+package com.example.vooysocial;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

@@ -6,16 +6,16 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
 
+  
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Social Network',
+      title: 'VooySocial',
       home: Home(),
-      theme: ThemeData(
-        primaryColor: Colors.purple,
-        accentColor: Colors.teal
-      ),
+      theme:ThemeData(
+        accentColor: Colors.teal, 
+        primaryColor: Colors.purple)
     );
   }
   

@@ -1,4 +1,4 @@
-# social_network
+# vooysocial
 
 A new Flutter project.
 
