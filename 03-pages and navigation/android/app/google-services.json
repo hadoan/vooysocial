@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1080116307431",
+    "firebase_url": "https://vooysocial.firebaseio.com",
+    "project_id": "vooysocial",
+    "storage_bucket": "vooysocial.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1080116307431:android:1b43641dbb36d891bf4942",
+        "android_client_info": {
+          "package_name": "com.hadoan.vooysocial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1080116307431-4q0lpld6qavr1nks0c73c8kdebrh1bpm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hadoan.vooysocial",
+            "certificate_hash": "359100dac5b474756acc689b236d5e7b268e625a"
+          }
+        },
+        {
+          "client_id": "1080116307431-iao8bci2do50i2r664tf6p9rr2ookv0p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5l7flG3waxXg7wI98WVqbEnGWYUSPsu4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1080116307431-iao8bci2do50i2r664tf6p9rr2ookv0p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
